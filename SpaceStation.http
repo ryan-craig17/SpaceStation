@@ -1,0 +1,6 @@
+@SpaceStation_HostAddress = http://localhost:5186
+
+GET {{SpaceStation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
