@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "SpaceStationAPI": {
+    "SpaceStation": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

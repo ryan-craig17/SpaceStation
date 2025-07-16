@@ -8,8 +8,8 @@ This project implements user secrets for local development. You will need to go 
 {
 	"Settings": {
         "EnvironmentValues": {
-            "APIkey_NASA": "your-api-key",
-            "APIkey_JWT": "your-api-key"
+            "NASA_API_Key": "your-api-key",
+            "JWST_API_Key": "your-api-key"
     }
 }
 ```

@@ -1,5 +1,4 @@
-﻿using System.IO.Pipes;
-
+﻿
 namespace SpaceStation.Models
 {
     public class AppSettingsModel
@@ -22,11 +21,11 @@ namespace SpaceStation.Models
 
     public class EnvironmentValues
     {
-        public string NASA_API_URL { get; set; }
-        public string JWST_API_URL { get; set; }
-        public string APIkey_NASA { get; set; }
-        public string APIkey_JWST { get; set; }
-        public string CorsAllowedSites { get; set; }
+        public string NASA_API_URL { get; set; } = string.Empty;
+        public string JWST_API_URL { get; set; } = string.Empty;
+        public string NASA_API_Key { get; set; } = string.Empty;
+        public string JWST_API_Key { get; set; } = string.Empty;
+        public string CorsAllowedSites { get; set; } = string.Empty;
         public Logging Logging { get; set; }
     }
 
@@ -37,17 +36,18 @@ namespace SpaceStation.Models
 
     public class LogLevel
     {
-        public string Default { get; set; }
-        public string MicrosoftAspNetCore { get; set; }
+        public string Default { get; set; } = string.Empty;
+        public string MicrosoftAspNetCore { get; set; } = string.Empty;
     }
 
     public class NasaResources
     {
-        public string APOD { get; set; }
-        public string AsteroidList { get; set; }
-        public string AsteroidLookup { get; set; }
-        public string AsteroidBrowse { get; set; }
-        public string MarsRoverPhotos { get; set; }
+        //Astronomy Picture Of the Day = APOD
+        public string APOD { get; set; } = string.Empty;
+        public string AsteroidList { get; set; } = string.Empty;
+        public string AsteroidLookup { get; set; } = string.Empty;
+        public string AsteroidBrowse { get; set; } = string.Empty;
+        public string MarsRoverPhotos { get; set; } = string.Empty;
     }
 
     public class JwstResources
