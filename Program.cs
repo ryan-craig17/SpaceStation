@@ -1,11 +1,18 @@
+using SpaceStation.DataLayer;
+using SpaceStation.Interfaces;
+using SpaceStation.Logic;
 using SpaceStation.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
 builder.Services.Configure<Settings>(builder.Configuration.GetSection("Settings"));
+builder.Configuration.AddUserSecrets<Program>();
+
+builder.Services.AddScoped<INasaLogic, NasaLogic>();
+builder.Services.AddScoped<IRestWorker, RestWorker>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

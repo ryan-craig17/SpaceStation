@@ -15,14 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="DataLayer\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Logic\" />
-    <Folder Include="Mappers\" />
-    <Folder Include="Models\Domain\" />
-    <Folder Include="Models\View\" />
   </ItemGroup>
 
 </Project>
