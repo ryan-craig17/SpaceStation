@@ -37,5 +37,27 @@ namespace SpaceStationAPI.Controllers
 
             return StatusCode(resultCode, photo);
         }
+
+        [HttpGet]
+        [Route("asteroid-lookup")]
+        [Produces("application/json", Type = typeof(NearEarthObjectView))]
+        public async Task<IActionResult> GetAsteroidLookup(int id)
+        {
+            var neo = await _nasaLogic.GetNearEarthObject(id);
+            var resultCode = (int)(neo?.StatusCode ?? HttpStatusCode.InternalServerError);
+
+            return StatusCode(resultCode, neo);
+        }
+
+        [HttpGet]
+        [Route("asteroid-browse")]
+        [Produces("application/json", Type = typeof(NearEarthObjectListView))]
+        public async Task<IActionResult> BrowseAsteroids(int pageNumber = 0, int pageSize = 20)
+        {
+            var browse = await _nasaLogic.BrowseNearEarthObjects(pageNumber, pageSize);
+            var resultCode = (int)(browse?.StatusCode ?? HttpStatusCode.InternalServerError);
+
+            return StatusCode(resultCode, browse);
+        }
     }
 }
